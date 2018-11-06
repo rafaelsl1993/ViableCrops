@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HintActivity">
+
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="55dp"
+        app:layout_constraintBottom_toTopOf="@id/chkUmdSolo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_lock_black_24dp"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:id="@+id/a1"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="75dp"
+        android:text="Soil Humidity"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <SeekBar
+        android:id="@+id/txtUmdSolo"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="0"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/a1"
+         />
+
+
+    <TextView
+        android:id="@+id/a2"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Air Humidity"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtUmdSolo" />
+    <SeekBar
+        android:id="@+id/txtUmdAr"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a2" />
+
+
+    <TextView
+        android:id="@+id/a3"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Soil Temp."
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtUmdAr" />
+    <SeekBar
+        android:id="@+id/txtTempSolo"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a3" />
+
+
+    <TextView
+        android:id="@+id/a4"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Air Temp."
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTempSolo" />
+    <SeekBar
+        android:id="@+id/txtTempAr"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a4" />
+
+
+    <TextView
+        android:id="@+id/a5"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Fertilization"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTempAr" />
+    <SeekBar
+        android:id="@+id/txtAdub"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a5" />
+
+
+    <TextView
+        android:id="@+id/a6"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="25dp"
+        android:text="Plague"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtAdub" />
+    <SeekBar
+        android:id="@+id/txtPraga"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:elevation="5dp"
+        android:max="10"
+        android:progress="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/a6" />
+
+
+    <TextView
+        android:layout_width="190dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="35dp"
+        android:text="Variables"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/a1"
+        app:layout_constraintStart_toStartOf="parent" />
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/button_background"
+        android:elevation="2dp"
+        android:stateListAnimator="@null"
+        android:text="Calculate"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    <CheckBox
+        android:id="@+id/chkUmdSolo"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <CheckBox
+        android:id="@+id/chkUmdAr"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkUmdSolo"
+        android:layout_marginTop="30dp"/>
+    <CheckBox
+        android:id="@+id/chkTempSolo"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkUmdAr"
+        android:layout_marginTop="30dp"/>
+    <CheckBox
+        android:id="@+id/chkTempAr"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkTempSolo"
+        android:layout_marginTop="30dp"/>
+    <CheckBox
+        android:id="@+id/chkAdub"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkTempAr"
+        android:layout_marginTop="30dp"/>
+    <CheckBox
+        android:id="@+id/chkPraga"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
+        tools:layout_editor_absoluteX="285dp"
+        tools:layout_editor_absoluteY="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chkAdub"
+        android:layout_marginTop="30dp"/>
+
+
+</android.support.constraint.ConstraintLayout>
