@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         btnSgIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) { //verificação para login
 
                 Cursor cursor = provider.query(true, null, "username=?" +
                         " AND " + "senha=?" , new String[] {usuario.getText().toString(), senha.getText().toString()});
                 if(cursor.moveToFirst()){
                     User = usuario.getText().toString();
-                    Intent intent = new Intent(getBaseContext(), CropsActivity.class);
+                    Intent intent = new Intent(getBaseContext(), CropsActivity.class); //se login confirmar, o usuário é direcionado para a tela principal
                     startActivity(intent);
                 }
                 else{

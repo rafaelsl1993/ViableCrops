@@ -18,7 +18,7 @@ public class HintActivity extends AppCompatActivity {
     private int d;
     private int e;
     private int f;
-    CheckBox chkUmdSolo;
+    CheckBox chkUmdSolo; //determinam se as variáveis de plantio serão consideradas para cálculo
     CheckBox chkUmdAr;
     CheckBox chkTempSolo;
     CheckBox chkTempAr;
@@ -29,14 +29,14 @@ public class HintActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hint);
-        final SeekBar txtUmdSolo = findViewById(R.id.txtUmdSolo);
+        final SeekBar txtUmdSolo = findViewById(R.id.txtUmdSolo); //seekbars utilizadas para atribuir valores às variáveis a serem calculadas
         final SeekBar txtUmdAr = findViewById(R.id.txtUmdAr);
         final SeekBar txtTempSolo = findViewById(R.id.txtTempSolo);
         final SeekBar txtTempAr = findViewById(R.id.txtTempAr);
         final SeekBar txtAdub = findViewById(R.id.txtAdub);
         final SeekBar txtPraga = findViewById(R.id.txtPraga);
 
-        txtUmdSolo.setProgress(Integer.parseInt(getIntent().getSerializableExtra("a").toString()));
+        txtUmdSolo.setProgress(Integer.parseInt(getIntent().getSerializableExtra("a").toString())); //É realizada a leitura da Intent
         txtUmdAr.setProgress(Integer.parseInt(getIntent().getSerializableExtra("b").toString()));
         txtTempSolo.setProgress(Integer.parseInt(getIntent().getSerializableExtra("c").toString()));
         txtTempAr.setProgress(Integer.parseInt(getIntent().getSerializableExtra("d").toString()));
@@ -52,7 +52,7 @@ public class HintActivity extends AppCompatActivity {
         chkAdub = findViewById(R.id.chkAdub);
         chkPraga = findViewById(R.id.chkPraga);
 
-        txtUmdSolo.setEnabled(chkUmdSolo.isChecked());
+        txtUmdSolo.setEnabled(chkUmdSolo.isChecked()); //verifica se as variáveis estão travadas ou não
         txtUmdAr.setEnabled(chkUmdAr.isChecked());
         txtTempSolo.setEnabled(chkTempSolo.isChecked());
         txtTempAr.setEnabled(chkTempAr.isChecked());
@@ -113,7 +113,7 @@ public class HintActivity extends AppCompatActivity {
 
         btnCalc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //realiza o calculo com as variáveis escolhidas pelo usuário
                 if(chkUmdSolo.isChecked())
                     a = txtUmdSolo.getProgress();
                 if(chkUmdSolo.isChecked())
@@ -128,6 +128,9 @@ public class HintActivity extends AppCompatActivity {
                     f = txtPraga.getProgress();
 
                 System.out.println("PASSOU1 ------------------------------------------------------");
+
+                /*Realiza comparação com vetores semelhantes
+                * no banco de dados e retorna aquele que se aproxima mais com uma taxa de erro de 2 pontos */
 
                 Cursor cursor = MainActivity.provider.query(false, null, "username=?" + " and " + "umidade_solo<=? and umidade_solo>=? " +
                                 "and umidade_ar<=? and umidade_ar>=? and adubagem<=? and adubagem>=? and pragas<=? and pragas>=? and temperatura_solo<=? " +
@@ -149,6 +152,8 @@ public class HintActivity extends AppCompatActivity {
 
 
                     Toast.makeText(HintActivity.this, "The result is Harvest set on this screen", Toast.LENGTH_SHORT).show();
+
+                    //Atribui valores do vetor encontrado nas seekbars
 
                     cursor.moveToPosition(index);
                     txtUmdSolo.setProgress(cursor.getInt(1));

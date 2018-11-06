@@ -21,7 +21,7 @@ public class CropsActivity extends AppCompatActivity {
     private int f;
     private EditText Restult;
     boolean func = false;
-    private ProgressBar bar_a;
+    private ProgressBar bar_a; //variáveis utilizadas para barras de progresso
     private ProgressBar bar_b;
     private ProgressBar bar_c;
     private ProgressBar bar_d;
@@ -29,7 +29,7 @@ public class CropsActivity extends AppCompatActivity {
     private ProgressBar bar_f;
 
     public void refreshVars(){
-        a = bar_a.getProgress();
+        a = bar_a.getProgress(); //captura progresso atual da barra de progresso
         b = bar_b.getProgress();
         c = bar_c.getProgress();
         d = bar_d.getProgress();
@@ -61,7 +61,7 @@ public class CropsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(getBaseContext(), HintActivity.class);
-                intent.putExtra("a",a);
+                intent.putExtra("a",a); //Os valores do vetor atual são serializados na Intent para serem recuperadas
                 intent.putExtra("b",b);
                 intent.putExtra("c",c);
                 intent.putExtra("d",d);
@@ -71,7 +71,16 @@ public class CropsActivity extends AppCompatActivity {
 
             }
         });
-
+        /*INICIO-------------------------------------------------------
+        É feita a leitura do vetor atual e com base nestes dados é feita
+        a consulta no Banco de Dados dos vetores salvos de acordo com o usuário logado.
+        A query é composta pelas variáveis atuais e é utilizado um range
+        de +/- 2 em cada variável.
+        Após recuperar estes vetores do Banco de Dados, é calculado o coeficiênte angular
+        entre o vetor atual e cada vetor recuperado.
+        O vetor com o menor coeficiênte angular é utilizado como referência para o possível
+        resultado do vetor atual.
+         */
         btnProb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -112,9 +121,15 @@ public class CropsActivity extends AppCompatActivity {
 
             }
         });
+        /*FIM-------------------------------------------------------------
+         */
 
 
 
+        /*INICIO----------------------------------------------------------
+        Os dados salvos dos sensores são salvos no Banco de Dados de acordo
+        com o usuário logado
+         */
         btnHarv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -155,7 +170,11 @@ public class CropsActivity extends AppCompatActivity {
 
                 func = !func;
             }
+
         });
+
+        /*FIM------------------------------------------------------------------------------
+         */
 
     }
 }

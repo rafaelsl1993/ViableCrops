@@ -16,6 +16,8 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        //Populador de banco de dados para teste
+
         int a,b,c,d,e,f,g;
 
         ContentValues values = new ContentValues();
@@ -48,14 +50,14 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText txtPassw = findViewById(R.id.txtPassw);
         final EditText txtPasswConf = findViewById(R.id.txtPassConf);
 
-        Button btnEndSgUp_to_Crops = findViewById(R.id.btnEndSgUp_to_Crops);
+        Button btnEndSgUp_to_Crops = findViewById(R.id.btnEndSgUp_to_Crops); //botão para realizar criação de conta
 
         btnEndSgUp_to_Crops.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Boolean Test = !txtUser.getText().toString().isEmpty() && !txtName.getText().toString().isEmpty();
 
-                if(txtPassw.getText().toString().equals(txtPasswConf.getText().toString()) && Test) {
+                if(txtPassw.getText().toString().equals(txtPasswConf.getText().toString()) && Test) { //realiza cadastro
 
                     ContentValues values = new ContentValues();
 
@@ -69,7 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                         MainActivity.User = txtUser.getText().toString();
 
-                        Intent intent = new Intent(getBaseContext(), CropsActivity.class);
+                        Intent intent = new Intent(getBaseContext(), CropsActivity.class); //após cadastro o usuário é direcionado para a tela principal
                         startActivity(intent);
                     }
 

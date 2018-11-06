@@ -9,20 +9,19 @@ import android.support.annotation.Nullable;
 
 public class DBProvider{
 
-
-    private SQLiteHelper DBaseHelper;
-    private SQLiteDatabase DataBase;
+    private SQLiteHelper DBaseHelper; //Instância do helper do banco de dados
+    private SQLiteDatabase DataBase; //Instância do banco de dados SQLite
 
     DBProvider(Context context){
         DBaseHelper = new SQLiteHelper(context);
     }
 
-    public Cursor query(boolean identifier , @Nullable String[] columns, @Nullable String rows,
+    public Cursor query(boolean identifier , @Nullable String[] columns, @Nullable String rows, //Método que retorna a posição do cursor do banco de dados
                         @Nullable String[] selectionArgs){
         DataBase = DBaseHelper.getReadableDatabase();
         Cursor cursor;
 
-        if(identifier) {
+        if(identifier) { //a variável identifier determina se o registro buscado é um usuário(true) ou um vetor de plantio(false)
             cursor = DataBase.query("Usuario", columns, rows, selectionArgs, null, null, null);
         }
 
@@ -33,7 +32,7 @@ public class DBProvider{
         return cursor;
     }
 
-    public long insert(boolean identifier ,@Nullable ContentValues values){
+    public long insert(boolean identifier ,@Nullable ContentValues values){ //Método de inserção de registro no banco de dados
         DataBase = DBaseHelper.getWritableDatabase();
 
         long id;
@@ -49,7 +48,7 @@ public class DBProvider{
         return id;
     }
 
-    public int delete(boolean identifier, @Nullable String selection, @Nullable String[] selectionArgs){
+    public int delete(boolean identifier, @Nullable String selection, @Nullable String[] selectionArgs){ //Método de exclusão de registro do banco
         DataBase = DBaseHelper.getWritableDatabase();
 
         if(identifier) {
